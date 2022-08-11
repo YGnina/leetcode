@@ -12,15 +12,15 @@ class Solution(object):
         """
         # Store nodes
         ans = []
-	      # Recursive function
+		# Recursive function
         def preorder_traversal(root):
-			  # Base case
+			# Base case
             if root is None:
                 return
             
-			  # Record node
+			# Record node
             ans.append(root.val)
-			  # Travel left then right
+			# Travel left then right
             preorder_traversal(root.left)
             preorder_traversal(root.right)
             
