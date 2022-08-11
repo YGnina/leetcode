@@ -12,8 +12,6 @@ class Solution(object):
         """
         result=[]
         stack = [root]
-        if root is None:
-            return
         
         while stack:
             node =  stack.pop()
