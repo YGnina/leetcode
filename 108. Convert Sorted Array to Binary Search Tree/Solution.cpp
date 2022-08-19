@@ -16,7 +16,7 @@ public:
     }
     
     TreeNode* createBST(vector<int>& nums, int l, int r) {
-        if(l>r){
+        if(l > r){
             return NULL;
         }
         
