@@ -9,7 +9,6 @@ class Solution {
                     count += 1;
                 }
             }
-
             if (count > majorityCount) {
                 return num;
             }
