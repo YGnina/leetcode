@@ -13,17 +13,26 @@
  *     }
  * }
  */
-class Solution {
-    
-    public TreeNode invertTree(TreeNode root) {
+class Solution 
+{
+    public TreeNode invertTree(TreeNode root)
+    {
+        
+        //base case       
         if(root == null){
             return null;
         }
         
-        TreeNode tmp = root.left;
-        root.left = invertTree(root.right);
-        root.right = invertTree(tmp);
-        return root;
+        //Recursing down the left subtree
+        TreeNode left= invertTree(root.left);
+        //Recursing down the right subtree
+        TreeNode right= invertTree(root.right);
         
+        //ROOT
+        //swap the pointers, to just alternate the node 
+        root.left= right;//root left is pointing to right child
+        root.right= left;//root right is pointing to left child
+        
+        return root;
     }
 }
