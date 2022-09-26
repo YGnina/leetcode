@@ -6,10 +6,10 @@ class Solution {
                 if(grid[i][j]==1){
                     perimeter += 4;
                     if(i > 0 && grid[i-1][j] == 1){
-                        perimeter -= 2;
+                        perimeter -= 2;     //减去重复加的公用边，不算周长
                     }
                     if(j > 0 && grid[i][j-1] == 1){
-                        perimeter -= 2;
+                        perimeter -= 2;     //减去重复加的公用边，不算周长
                     }
                 }
             }
