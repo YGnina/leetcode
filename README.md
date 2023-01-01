@@ -45,3 +45,47 @@ while(j < size()){
 return ans;
 
 ```
+
+
+
+### XOR LC#268 #389
+
+The XOR logical operation, exclusive or, takes two boolean operands and returns true if and only if the operands are different. 
+
+That is, 1 xor 1 = 0, 0 xor 0 = 0, 1 xor 0 = 1, 0 xor 1 = 1
+
+a xor a = 0
+
+a xor b = b xor a
+
+a xor b xor a = a xor a xor b = b
+
+
+```
+(5 ^ 3)
+
+    5 in binary = (101)
+    3 in binary = (011)
+    (101)^(011) = (110)
+    (110) in decimal = 6
+    Thus, 5^3 = 6.
+
+```
+
+Example for #389:
+
+s = abc
+
+t = cabx
+
+if we take XOR of every character. all the n character of s "abc" is similar to n character of t "cab". So, they will cancel each other. 
+
+And we left with our answer.
+
+```
+s =  abc
+t =  cbax
+------------
+ans -> x
+-----------
+```
