@@ -3,8 +3,8 @@ class Solution {
         int cnt = 1;
         int max = 1;
 
-        for(int i=1; i<s.length();i++){
-            if(s.charAt(i)==s.charAt(i-1)){
+        for(int i=0; i<s.length()-1;i++){
+            if(s.charAt(i+1)==s.charAt(i)){
                 cnt++;
             }else{
                 cnt = 1;
