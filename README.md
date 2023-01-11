@@ -89,3 +89,41 @@ t =  cbax
 ans -> x
 -----------
 ```
+
+### Backtracking LC#131
+
+[reference](https://leetcode.com/problems/palindrome-partitioning/solutions/182307/Java:-Backtracking-Template-General-Approach/?orderBy=most_votes)
+
+- An algorithmic technique where the goal is to get all solutions to a problem using the brute force approach.
+
+- All backtracking problems are composed by these three steps: choose, explore, unchoose.
+
+    So for each problem, you need to know:
+
+    > choose what?For this problem, we choose each substring.
+    
+    > how to explore? For this problem, we do the same thing to the remained string.
+    
+    > unchoose Do the opposite operation of choose.
+
+- ```Define helper():``` Usually we need a helper funcition in backtracking problem, to accept more parameters.
+
+    ```Parameters:``` Usually we need the following parameters
+    
+    - The object you are working on
+        
+    - A start index or an end index which indicate which part you are working on
+    
+    - A step result, to remember current choose and then do unchoose 
+    
+    - A final result, to remember the final result
+    
+    ```Base case: ```The base case defines when to add step into result, and when to return.
+    
+    ```Use for-loop: ```Usually we need a for loop to iterate though the input String s, so that we can choose all the options.
+    
+    ```Choose:``` In this problem, if the substring of s is palindrome, we add it into the step, which means we choose this substring.
+    
+    ```Explore:``` In this problem, we want to do the same thing to the remaining substring. So we recursively call our function.
+    
+    ```Un-Choose:``` We draw back, remove the chosen substring, in order to try other options.
