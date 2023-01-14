@@ -127,3 +127,29 @@ ans -> x
     ```Explore:``` In this problem, we want to do the same thing to the remaining substring. So we recursively call our function.
     
     ```Un-Choose:``` We draw back, remove the chosen substring, in order to try other options.
+    
+    
+### data structure
+- A data structure is a storage that is used to store and organize data. It is a way of arranging data on a computer so that it can be accessed and updated efficiently.
+    - An array is a collection of items stored at contiguous memory locations. 
+    
+    - A Queue is defined as a linear data structure that is open at both ends and the operations are performed in First In First Out (FIFO) order.
+        - enqueue, dequeue, handle multiple data, access both ends
+    - A Stack is a linear data structure that accompanies a principle known as Last In First Out(LIFO).
+        - push, pop, peek
+    - A hash table is a data structure that you can use to store data in key-value format with direct access to its items in constant time. 
+        - put, remove, replace
+    - A Linked List is a linear data structure, in which the elements are not stored at contiguous memory locations.
+        - push, pop, peak, head, next
+    - A Binary Tree is defined as a tree data structure where each node has at most 2 children. 
+        - A Binary Search Tree is a node-based binary tree data structure which has the following properties
+            - The left subtree of a node contains only nodes with keys lesser than the node’s key.
+            - The right subtree of a node contains only nodes with keys greater than the node’s key.  -->(左小右大)
+            - The left and right subtree each must also be a binary search tree.
+        - A Heap is a special Tree-based data structure in which the tree is a complete binary tree.
+            - max-heap(root of each binary tree is the maximum), min-heap(root of each binary tree is the minimum)
+    - A Graph is a non-linear data structure consisting of vertices and edges. 
+        - Composed of a set of vertices( V ) and a set of edges( E ), denoted by G(E, V).
+        - BFS(Dijkstra's), DFS, minimum spanning tree, shortest path
+
+
