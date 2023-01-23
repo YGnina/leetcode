@@ -129,15 +129,15 @@ ans -> x
     ```Un-Choose:``` We draw back, remove the chosen substring, in order to try other options.
     
     
-### data structure
+### Data Structure
 - A data structure is a storage that is used to store and organize data. It is a way of arranging data on a computer so that it can be accessed and updated efficiently.
-    - An array is a collection of items stored at contiguous memory locations. 
+    - An Array is a collection of items stored at contiguous memory locations. 
     
     - A Queue is defined as a linear data structure that is open at both ends and the operations are performed in First In First Out (FIFO) order.
         - enqueue, dequeue, handle multiple data, access both ends
     - A Stack is a linear data structure that accompanies a principle known as Last In First Out(LIFO).
         - push, pop, peek
-    - A hash table is a data structure that you can use to store data in key-value format with direct access to its items in constant time. 
+    - A Hash Table is a data structure that you can use to store data in key-value format with direct access to its items in constant time. 
         - put, remove, replace
     - A Linked List is a linear data structure, in which the elements are not stored at contiguous memory locations.
         - push, pop, peak, head, next
@@ -151,5 +151,13 @@ ans -> x
     - A Graph is a non-linear data structure consisting of vertices and edges. 
         - Composed of a set of vertices( V ) and a set of edges( E ), denoted by G(E, V).
         - BFS(Dijkstra's), DFS, minimum spanning tree, shortest path
+        
+### Two-Pointer Solution LC#19
 
+[reference](https://leetcode.com/problems/remove-nth-node-from-end-of-list/solutions/1164542/js-python-java-c-easy-two-pointer-solution-w-explanation/)
 
+- With a singly linked list, the only way to find the end of the list is to actually iterate all the way to the end. 
+
+- In order to solve this problem in only one pass and O(1) extra space, however, we would need to find a way to both reach the end of the list with one pointer and also reach the n'th node from the end simultaneously with a second pointer.
+
+- To do that, we can simply stagger our two pointers by n nodes by giving the first pointer (fast) a head start before starting the second pointer (slow). Doing this will cause slow to reach the n'th node from the end at the same time that fast reaches the end.
