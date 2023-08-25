@@ -4,11 +4,12 @@ public:
         int len = str.size();
         stack<int> s;
         char sign = '+';
-        int res, tmp = 0;
+        int res = 0;
+        long tmp = 0;
 
         for(unsigned int i=0; i<len; i++){
             if(isdigit(str[i])){
-                tmp = 10 * tmp + str[i]-'0';
+                tmp = tmp*10 + (str[i]-'0');
             }
             if(!isdigit(str[i]) && !isspace(str[i]) || i == len-1){
                 if(sign == '-'){
