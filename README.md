@@ -119,6 +119,15 @@ return ans;
 
 - To do that, we can simply stagger our two pointers by n nodes by giving the first pointer (fast) a head start before starting the second pointer (slow). Doing this will cause slow to reach the n'th node from the end at the same time that fast reaches the end.
 
+### Dynamic Programming
+1. How to recognize a DP problem
+   - DP is a method for solving problems by breaking them down into a collection of simpler subproblems, solving each of those subproblems just once, and storing their solutions.
+2. Identify problem variables
+3. Clearly express the recurrence relation
+4. Identify the base cases
+5. Decide if you want to implement it iteratively or recursively
+6. Add memoization
+7. Determine time complexity
 
 ### KMP LC#28
 [reference](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm)
