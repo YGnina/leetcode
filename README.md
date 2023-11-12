@@ -239,3 +239,18 @@ algorithm kmp_search:
         ans -> x
         -----------
         ```
+        
+### database sql
+- LIKE '%xxx%'
+- REGEXP
+    - ```^``` to indicate beginning of a string ( '^xxx' = begin with xxx )
+    - ```$``` to indicate end of a string ( 'xxx$' = end with xxx )
+    - ```|```  logical or
+    - ```[]``` e.g. [abc]d = [a-c]d = ad, bd, cd
+- ORDER BY
+    - field name DESC / ASC
+    - 1 , 2
+- LIMIT limit number of results
+    - offset e.g. LIMIT 6, 3 = skip 6 and select 3
+    - use limit and order by to find the nth highest/lowest
+- JOIN ON
