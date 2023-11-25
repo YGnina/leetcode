@@ -4,5 +4,6 @@ FROM (
     UNION ALL
     SELECT accepter_id AS total_requests FROM RequestAccepted
 ) AS subquery
-group by 1
-order by 2 desc limit 1
+group by id
+order by num desc 
+limit 1
