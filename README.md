@@ -1,4 +1,112 @@
 # Notes
+### Binary Search
+
+Binary Search is generally composed of 3 main sections:
+
+1. Pre-processing - Sort if collection is unsorted.
+
+2. Binary Search - Using a loop or recursion to divide search space in half after each comparison.
+
+3. Post-processing - Determine viable candidates in the remaining space.
+
+**Template #1:** (left <= right)
+- Most basic and elementary form of Binary Search
+- Search Condition can be determined without comparing to the element's neighbors (or use specific elements around it)
+- No post-processing required because at each step, you are checking to see if the element has been found. If you reach the end, then you know the element is not found
+
+```
+int binarySearch(vector<int>& nums, int target){
+  if(nums.size() == 0)
+    return -1;
+
+  int left = 0, right = nums.size() - 1;
+  while(left <= right){
+    // Prevent (left + right) overflow
+    int mid = left + (right - left) / 2;
+    if(nums[mid] == target){
+        return mid;
+    }
+    else if(nums[mid] < target) {
+        left = mid + 1;
+    }
+    else {
+        right = mid - 1;
+    }
+  }
+
+  // End Condition: left > right
+  return -1;
+}
+```
+
+**Template #2:** (left < right):
+- An advanced way to implement Binary Search.    
+- Search Condition needs to access the element's immediate right neighbor
+- Use the element's right neighbor to determine if the condition is met and decide whether to go left or right
+- Guarantees Search Space is at least 2 in size at each step
+- Post-processing required. Loop/Recursion ends when you have 1 element left. Need to assess if the remaining element meets the condition.
+
+```
+int binarySearch(vector<int>& nums, int target){
+  if(nums.size() == 0)
+    return -1;
+
+  int left = 0, right = nums.size() - 1;
+  while(left < right){
+    // Prevent (left + right) overflow
+    int mid = left + (right - left) / 2;
+    if(nums[mid] == target){ return mid; }
+    else if(nums[mid] < target) { left = mid + 1; }
+    else { right = mid; }
+  }
+
+  // Post-processing:
+  // End Condition: left == right
+  if(nums[left] == target) return left;
+  return -1;
+}
+```
+**Template #3:** (left + 1 < right):
+- An alternative way to implement Binary Search
+- Search Condition needs to access element's immediate left and right neighbors
+- Use element's neighbors to determine if the condition is met and decide whether to go left or right
+- Guarantees Search Space is at least 3 in size at each step
+- Post-processing required. Loop/Recursion ends when you have 2 elements left. Need to assess if the remaining elements meet the condition.
+
+```
+int binarySearch(vector<int>& nums, int target){
+    if (nums.size() == 0)
+        return -1;
+
+    int left = 0, right = nums.size() - 1;
+    while (left + 1 < right){
+        // Prevent (left + right) overflow
+        int mid = left + (right - left) / 2;
+        if (nums[mid] == target) {
+            return mid;
+        } else if (nums[mid] < target) {
+            left = mid;
+        } else {
+            right = mid;
+        }
+    }
+
+    // Post-processing:
+    // End Condition: left + 1 == right
+    if(nums[left] == target) return left;
+    if(nums[right] == target) return right;
+    return -1;
+}
+```
+Runtime: O(log n)  Logarithmic Time
+- Why log n?
+    - Binary search is performed by dividing the existing array in half.
+    - So every time you a call the subroutine ( or complete one iteration ) the size reduced to half of the existing part.
+    - First N become N/2, then it become N/4 and go on till it find the element or size become 1.
+    - The maximum no of iterations is log N (base 2).
+
+
+Space: O(1)  Constant Space
 
 ### Sliding Window LC#3 
 
