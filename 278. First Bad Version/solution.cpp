@@ -14,9 +14,6 @@ public:
             if(!isBadVersion(mid)){
                 low = mid + 1;
             }else{
-                if(!isBadVersion(mid-1)){
-                    return mid;
-                }
                 high = mid;
             }
         }
